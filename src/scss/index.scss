@@ -1,0 +1,43 @@
+@import "./variables";
+@import "./mixins";
+@import "./functions";
+
+//Resets
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+body {
+	font-family: $mainFont;
+	font-weight: 700;
+	background-color: $lightGrayishCyan;
+}
+
+@include lg {
+	body {
+		@include flex(center, center);
+		height: 100vh;
+	}
+}

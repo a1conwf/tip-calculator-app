@@ -1,0 +1,105 @@
+@import "../../scss/functions";
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+//output
+.output {
+	padding: 37px 24px 24px;
+	background-color: #00474b;
+	border-radius: rem(15);
+
+	//output tip container
+	&__tip {
+		@include flex(space-between, center);
+
+		&:first-child {
+			margin-bottom: 20px;
+		}
+
+		&:last-of-type {
+			margin-bottom: 32px;
+		}
+
+		//tip info
+		&-info {
+			display: flex;
+			flex-direction: column;
+
+			//tip name
+			&-name {
+				font-size: rem(16);
+				line-height: rem(24);
+				color: $white;
+			}
+
+			//tip unit
+			&-unit {
+				font-size: rem(13);
+				line-height: rem(19);
+				color: #7f9d9f;
+			}
+		}
+
+		//tip num
+		&-num {
+			font-size: rem(32);
+			line-height: rem(47);
+			letter-spacing: -0.67px;
+			color: $cyan;
+		}
+	}
+
+	//reset btn
+	.btn-reset {
+		width: 100%;
+		min-height: rem(48);
+		font-family: $mainFont;
+		font-size: rem(20);
+		line-height: rem(30);
+		color: rgba(0, 71, 75, 1);
+		text-transform: uppercase;
+		background-color: $cyan;
+		border-radius: rem(5);
+
+		&:active {
+			background-color: $softCyan;
+		}
+
+		&:disabled {
+			background-color: #0d686d;
+			opacity: 0.35;
+		}
+	}
+}
+
+@include lg {
+	//output
+	.output {
+		padding: 40px;
+		display: flex;
+		flex-direction: column;
+
+		//each tip container
+		&__tip {
+			&:first-child {
+				margin-bottom: 25px;
+			}
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+
+			//tip num
+			&-num {
+				font-size: rem(48);
+				line-height: rem(71);
+				letter-spacing: -1px;
+			}
+		}
+
+		//reset btn
+		.btn-reset {
+			margin-top: auto;
+		}
+	}
+}

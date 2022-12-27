@@ -1,0 +1,189 @@
+@import "../../scss/functions";
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+//form
+.form {
+	margin-bottom: 32px;
+
+	//input
+	input {
+		width: 100%;
+		min-height: 48px;
+		padding-right: 18px;
+		font-family: $mainFont;
+		font-weight: 700;
+		font-size: rem(24);
+		line-height: rem(36);
+		color: $darkCyan;
+		outline: none;
+		border: none;
+		border-radius: rem(5);
+		background-color: #f3f9fa;
+		text-align: right;
+
+		&:focus {
+			border: 2px solid $cyan;
+		}
+
+		//hide arrows
+		&[type="number"] {
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+		}
+	}
+
+	//form group
+	&__group {
+		margin-bottom: 32px;
+
+		//form group header
+		&-header {
+			@include flex(space-between, center);
+			margin-bottom: 6px;
+		}
+
+		//label
+		&-lbl {
+			display: block;
+			font-size: rem(16);
+			line-height: rem(24);
+			color: $darkGrayishCyan;
+
+			//tips section label
+			&.tips-lbl {
+				margin-bottom: 16px;
+			}
+		}
+
+		//error text
+		&-error {
+			font-size: rem(12);
+			text-align: right;
+			color: $softRed;
+		}
+
+		//form group tips
+		&.tips {
+			//tips grid
+			.tips-grid {
+				display: grid;
+				grid-gap: 16px;
+				grid-template-columns: repeat(2, 1fr);
+
+				//radio input
+				input[type="radio"] {
+					display: none;
+
+					//input hover
+					&:hover + label {
+						cursor: pointer;
+					}
+
+					//input checked
+					&:checked + label {
+						background-color: $cyan;
+						color: $darkCyan;
+					}
+				}
+
+				//custom input
+				input[type="number"] {
+					grid-column: 2;
+					grid-row: 3;
+
+					&::placeholder {
+						color: #547878;
+					}
+				}
+
+				//when there is no placeholder, change radio input bg and color
+				input[type="number"]:not(:placeholder-shown) ~ input[type="radio"]:checked + label {
+					background-color: $darkCyan;
+					color: $white;
+				}
+
+				//radio button
+				label {
+					@include flex(center, center);
+					min-height: rem(48);
+					font-size: rem(24);
+					line-height: rem(36);
+					background-color: $darkCyan;
+					color: $white;
+					border-radius: rem(5);
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		//form group input
+		&-input {
+			position: relative;
+
+			//empty input
+			input:empty::placeholder {
+				color: $darkCyan;
+				opacity: 0.35;
+			}
+
+			//input icon
+			img {
+				position: absolute;
+				top: 16px;
+				left: 17px;
+			}
+
+			//error input
+			&.error {
+				border: 2px solid $softRed;
+
+				input {
+					&:focus {
+						border: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include lg {
+	//form
+	.form {
+		margin-bottom: 0;
+
+		//form group
+		&__group {
+			margin-bottom: 40px;
+
+			//last form group
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			//error text
+			&-error {
+				font-size: rem(14);
+			}
+
+			//form group tips
+			&.tips {
+				//tips grid
+				.tips-grid {
+					grid-gap: 14px;
+					grid-template-columns: repeat(3, 1fr);
+
+					//custom input
+					input[type="number"] {
+						grid-column: 3;
+						grid-row: 2;
+					}
+				}
+			}
+		}
+	}
+}

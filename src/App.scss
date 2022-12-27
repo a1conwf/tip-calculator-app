@@ -1,0 +1,44 @@
+@import "./scss/variables";
+@import "./scss/mixins";
+
+main {
+	margin-bottom: 20px;
+}
+
+//logo
+.logo {
+	display: flex;
+	margin: 0 auto;
+	padding: 50px 0 41px;
+}
+
+//calculator
+.calculator {
+	max-width: 375px;
+	margin: 0 auto;
+	padding: 32px;
+	background-color: $white;
+	box-shadow: 0px 32px 43px 0px #4fa6af33;
+	border-radius: 25px;
+}
+
+@include lg {
+	//main
+	main {
+		margin-bottom: 0;
+	}
+
+	//logo
+	.logo {
+		padding: 0 0 85px;
+	}
+
+	//calculator
+	.calculator {
+		max-width: 920px;
+		padding: 45px 32px 48px 48px;
+		display: grid;
+		grid-gap: 48px;
+		grid-template-columns: 379px 413px;
+	}
+}

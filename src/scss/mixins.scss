@@ -1,0 +1,11 @@
+@mixin flex($justify, $align) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin lg {
+	@media screen and (min-width: 992px) {
+		@content;
+	}
+}
