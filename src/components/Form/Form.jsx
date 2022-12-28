@@ -62,19 +62,20 @@ const Form = (props) => {
 
 				<div className="tips-grid">
 					<input type="number" name="customTip" value={selectedTip.customTip} placeholder="Custom" onInput={handleTipSelected} onWheel={(e) => e.target.blur()} />
-					<input type="radio" name="tip" id="tip5" value={5} onClick={handleTipSelected} />
+
+					<input type="radio" className={selectedTip.tip === "5" ? "active" : ""} name="tip" id="tip5" value={5} onClick={handleTipSelected} />
 					<label htmlFor="tip5">5%</label>
 
-					<input type="radio" name="tip" id="tip10" value={10} onClick={handleTipSelected} />
+					<input type="radio" className={selectedTip.tip === "10" ? "active" : ""} name="tip" id="tip10" value={10} onClick={handleTipSelected} />
 					<label htmlFor="tip10">10%</label>
 
-					<input type="radio" name="tip" id="tip15" value={15} onClick={handleTipSelected} />
+					<input type="radio" className={selectedTip.tip === "15" ? "active" : ""} name="tip" id="tip15" value={15} onClick={handleTipSelected} />
 					<label htmlFor="tip15">15%</label>
 
-					<input type="radio" name="tip" id="tip25" value={25} onClick={handleTipSelected} />
+					<input type="radio" className={selectedTip.tip === "25" ? "active" : ""} name="tip" id="tip25" value={25} onClick={handleTipSelected} />
 					<label htmlFor="tip25">25%</label>
 
-					<input type="radio" name="tip" id="tip50" value={50} onClick={handleTipSelected} />
+					<input type="radio" className={selectedTip.tip === "50" ? "active" : ""} name="tip" id="tip50" value={50} onClick={handleTipSelected} />
 					<label htmlFor="tip50">50%</label>
 				</div>
 			</div>

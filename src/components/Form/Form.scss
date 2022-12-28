@@ -83,8 +83,7 @@
 						cursor: pointer;
 					}
 
-					//input checked
-					&:checked + label {
+					&.active + label {
 						background-color: $cyan;
 						color: $darkCyan;
 					}
